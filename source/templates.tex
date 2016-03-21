@@ -2811,7 +2811,8 @@ int main() {
   g(ip);            // calls \#4
 }
 \end{codeblock}
-\end{example}\begin{example}
+\end{example}
+\begin{example}
 \begin{codeblock}
 template<class T, class U> struct A { };
 
@@ -2826,7 +2827,8 @@ void h() {
   g(42);                                              // error: ambiguous
 }
 \end{codeblock}
-\end{example}\begin{example}
+\end{example}
+\begin{example}
 \begin{codeblock}
 template<class T, class... U> void f(T, U...);        // \#1
 template<class T            > void f(T);              // \#2
@@ -2838,7 +2840,8 @@ void h(int i) {
   g(&i);                                              // OK: calls \#3
 }
 \end{codeblock}
-\end{example}\end{note}
+\end{example}
+\end{note}
 
 \rSec2[temp.alias]{Alias templates}
 
