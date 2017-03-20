@@ -76,8 +76,8 @@ In Tables~\ref{tab:containers.container.requirements},
 \tcode{T}, \tcode{a} and \tcode{b}
 denote values of type \tcode{X}, \tcode{u}
 denotes an identifier, \tcode{r} denotes
-a non-const value of type \tcode{X}, and \tcode{rv}
-denotes a non-const rvalue of type \tcode{X}.
+a value of type (non-const) \tcode{X}, and \tcode{rv}
+denotes an rvalue of type (non-const) \tcode{X}.
 
 \begin{libreqtab5}
 {Container requirements}
@@ -517,7 +517,7 @@ and given a container type \tcode{X} having a \tcode{value_type} identical to \t
 and an \tcode{allocator_type} identical to \tcode{allocator_traits<A>::rebind_alloc<T>}
 and given an lvalue \tcode{m} of type \tcode{A},
 a pointer \tcode{p} of type \tcode{T*},
-an expression \tcode{v} of type (possibly \tcode{const}) \tcode{T},
+an expression \tcode{v} of type \tcode{T} or \tcode{const T},
 and an rvalue \tcode{rv} of type \tcode{T},
 the following terms are defined. If \tcode{X}
 is not allocator-aware, the terms below are defined as if \tcode{A} were
@@ -1569,13 +1569,13 @@ In Table~\ref{tab:containers.associative.requirements},
 \tcode{a} denotes a value of type \tcode{X},
 \tcode{a2} denotes a value of a type with nodes compatible with type
 \tcode{X} (Table~\ref{tab:containers.node.compat}),
-\tcode{b} denotes a possibly \tcode{const} value of type \tcode{X},
+\tcode{b} denotes a value of type \tcode{X} or \tcode{const X},
 \tcode{u} denotes the name of a variable being declared,
 \tcode{a_uniq} denotes a value of type \tcode{X}
 when \tcode{X} supports unique keys,
 \tcode{a_eq} denotes a value of type \tcode{X}
 when \tcode{X} supports multiple keys,
-\tcode{a_tran} denotes a possibly \tcode{const} value of type \tcode{X}
+\tcode{a_tran} denotes a value of type \tcode{X} or \tcode{const X}
 when the \grammarterm{qualified-id}
 \tcode{X::key_compare::is_transparent} is valid
 and denotes a type~(\ref{temp.deduct}),
@@ -1591,7 +1591,7 @@ denotes a valid range,
 \tcode{il} designates an object of type \tcode{initializer_list<value_type>},
 \tcode{t} denotes a value of type \tcode{X::value_type},
 \tcode{k} denotes a value of type \tcode{X::key_type}
-and \tcode{c} denotes a possibly \tcode{const} value of type \tcode{X::key_compare};
+and \tcode{c} denotes a value of type \tcode{X::key_compare} or \tcode{const X::key_compare};
 \tcode{kl} is a value such that \tcode{a} is partitioned~(\ref{alg.sorting})
 with respect to \tcode{c(r, kl)}, with \tcode{r} the key value of \tcode{e}
 and \tcode{e} in \tcode{a};
@@ -2192,7 +2192,7 @@ In Table~\ref{tab:HashRequirements}:
 \tcode{a} denotes a value of type \tcode{X},
 \tcode{a2} denotes a value of a type with nodes compatible with type
 \tcode{X} (Table~\ref{tab:containers.node.compat}),
-\tcode{b} denotes a possibly const value of type \tcode{X},
+\tcode{b} denotes a value of type \tcode{X} or \tcode{const X},
 \tcode{a_uniq} denotes a value of type \tcode{X} when \tcode{X} supports unique keys,
 \tcode{a_eq} denotes a value of type \tcode{X} when \tcode{X} supports equivalent keys,
 \tcode{i} and \tcode{j} denote input iterators that refer to \tcode{value_type},
@@ -2204,11 +2204,11 @@ In Table~\ref{tab:HashRequirements}:
 \tcode{il} denotes a value of type \tcode{initializer_list<value_type>},
 \tcode{t} denotes a value of type \tcode{X::value_type},
 \tcode{k} denotes a value of type \tcode{key_type},
-\tcode{hf} denotes a possibly const value of type \tcode{hasher},
-\tcode{eq} denotes a possibly const value of type \tcode{key_equal},
+\tcode{hf} denotes a value of type \tcode{hasher} or \tcode{const hasher},
+\tcode{eq} denotes a value of type \tcode{key_equal} or \tcode{const key_equal},
 \tcode{n} denotes a value of type \tcode{size_type},
 \tcode{z} denotes a value of type \tcode{float},
-and \tcode{nh} denotes a non-const rvalue of type \tcode{X::node_type}.
+and \tcode{nh} denotes an rvalue of type \tcode{X::node_type}.
 
 \begin{libreqtab4d}
   {Unordered associative container requirements (in addition to container)}
