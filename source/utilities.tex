@@ -17787,8 +17787,8 @@ Each of the templates in this subclause shall be a
 \indexlibrary{\idxcode{remove_cv}}%
 \tcode{template<class T>\br
  struct remove_cv;}                 &
- The member typedef \tcode{type} shall be the same as \tcode{T}
- except that any top-level cv-qualifier has been removed.
+ The member typedef \tcode{type} denotes the type formed
+ by removing any top-level cv-qualifiers from \tcode{T}.
  \begin{example} \tcode{remove_cv_t<const volatile int>}
  evaluates to \tcode{int}, whereas \tcode{remove_cv_t<const volatile int*>}
  evaluates to \tcode{const volatile int*}. \end{example}  \\  \rowsep
@@ -17916,8 +17916,8 @@ Each of the templates in this subclause shall be a
 \tcode{template<class T>\br
  struct remove_extent;}                 &
  If \tcode{T} is a type ``array of \tcode{U}'',
- the member typedef \tcode{type} shall
- be \tcode{U}, otherwise \tcode{T}.
+ the member typedef \tcode{type} is \tcode{U},
+ otherwise \tcode{T}.
  \begin{note} For multidimensional arrays, only the first array dimension is
  removed. For a type ``array of \tcode{const U}'', the resulting type is
  \tcode{const U}. \end{note}                                 \\  \rowsep
@@ -18002,10 +18002,10 @@ assert((is_same_v<remove_all_extents_t<int[][3]>, int>));
  = \textit{default-alignment}>\br
  struct aligned_storage;}
  &
- The value of \textit{default-alignment} shall be the most
+ The value of \textit{default-alignment} is the most
  stringent alignment requirement for any \Cpp{} object type whose size
  is no greater than \tcode{Len}\iref{basic.types}.
- The member typedef \tcode{type} shall be a trivial standard-layout type
+ The member typedef \tcode{type} denotes a trivial standard-layout type
  suitable for use as uninitialized storage for any object whose size
  is at most \tcode{Len} and whose alignment is a divisor of \tcode{Align}.\br
  \requires{} \tcode{Len} shall not be zero. \tcode{Align} shall be equal to
@@ -18016,10 +18016,11 @@ assert((is_same_v<remove_all_extents_t<int[][3]>, int>));
   class... Types>\br
   struct aligned_union;}
   &
-  The member typedef \tcode{type} shall be a trivial standard-layout type suitable for use as
+  The member typedef \tcode{type} denotes a trivial standard-layout type
+  suitable for use as
   uninitialized storage for any object whose type is listed in \tcode{Types};
-  its size shall be at least \tcode{Len}. The static member \tcode{alignment_value}
-  shall be an integral constant of type \tcode{size_t} whose value is the
+  its size is at least \tcode{Len}. The static member \tcode{alignment_value}
+  is an integral constant of type \tcode{size_t} whose value is the
   strictest alignment of all types listed in \tcode{Types}.\br
  \requires{} At least one type is provided.
   Each type in the template parameter pack \tcode{Types} shall be a complete object type.
