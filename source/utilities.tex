@@ -1866,8 +1866,8 @@ template<size_t I, class T> struct tuple_element<I, const volatile T>;
 \pnum
 Let \tcode{TE} denote \tcode{tuple_element_t<I, T>} of the \cv-unqualified type \tcode{T}. Then
 each of the three templates shall satisfy the \oldconcept{TransformationTrait}
-requirements\iref{meta.rqmts} with a member typedef \tcode{type} that names the following
-type:
+requirements\iref{meta.rqmts} with a member typedef \tcode{type} that denotes
+the following type:
 
 \begin{itemize}
 \item
@@ -4619,7 +4619,7 @@ template<size_t I, class T> class variant_alternative<I, const volatile T>;
 Let \tcode{VA} denote \tcode{variant_alternative<I, T>} of the
 cv-unqualified type \tcode{T}. Then each of the three templates shall
 meet the \oldconcept{TransformationTrait} requirements\iref{meta.rqmts} with a
-member typedef \tcode{type} that names the following type:
+member typedef \tcode{type} that denotes the following type:
 \begin{itemize}
 \item for the first specialization, \tcode{add_const_t<VA::type>},
 \item for the second specialization, \tcode{add_volatile_t<VA::type>}, and
