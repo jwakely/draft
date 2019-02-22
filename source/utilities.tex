@@ -17832,15 +17832,15 @@ Each of the templates in this subclause shall be a
 \tcode{template<class T>\br
  struct remove_reference;}                  &
  If \tcode{T} has type ``reference to \tcode{T1}'' then the
- member typedef \tcode{type} names \tcode{T1};
- otherwise, \tcode{type} names \tcode{T}.\\ \rowsep
+ member typedef \tcode{type} denotes the type \tcode{T1};
+ otherwise, \tcode{type} denotes the type \tcode{T}.\\ \rowsep
 
 \indexlibrary{\idxcode{add_lvalue_reference}}%
 \tcode{template<class T>\br
  struct add_lvalue_reference;}                     &
- If \tcode{T} names a referenceable type\iref{defns.referenceable} then
- the member typedef \tcode{type} names \tcode{T\&};
- otherwise, \tcode{type} names \tcode{T}.
+ If \tcode{T} is a referenceable type\iref{defns.referenceable} then
+ the member typedef \tcode{type} denotes the type \tcode{T\&};
+ otherwise, \tcode{type} denotes the type \tcode{T}.
  \begin{note}
  This rule reflects the semantics of reference collapsing\iref{dcl.ref}.
  \end{note}\\ \rowsep
@@ -17848,11 +17848,11 @@ Each of the templates in this subclause shall be a
 \indexlibrary{\idxcode{add_rvalue_reference}}%
 \tcode{template<class T>}\br
  \tcode{struct add_rvalue_reference;}    &
- If \tcode{T} names a referenceable type then
- the member typedef \tcode{type} names \tcode{T\&\&};
- otherwise, \tcode{type} names \tcode{T}.
+ If \tcode{T} is a referenceable type then
+ the member typedef \tcode{type} denotes the type \tcode{T\&\&};
+ otherwise, \tcode{type} denotes the type \tcode{T}.
  \begin{note} This rule reflects the semantics of reference collapsing\iref{dcl.ref}.
- For example, when a type \tcode{T} names a type \tcode{T1\&}, the type
+ For example, when a type \tcode{T} is a type \tcode{T1\&}, the type
  \tcode{add_rvalue_reference_t<T>} is not an rvalue reference.
  \end{note} \\
 \end{libreqtab2a}
