@@ -14287,8 +14287,9 @@ template<class T>
 \pnum
 If \tcode{T} is
 a specialization \tcode{reference_wrapper<X>} for some type \tcode{X},
-the member typedef \tcode{type} of \tcode{unwrap_reference<T>} is \tcode{X\&},
-otherwise it is \tcode{T}.
+the member typedef \tcode{type} of \tcode{unwrap_reference<T>}
+denotes the type \tcode{X\&},
+otherwise \tcode{type} denotes the type \tcode{T}.
 
 \rSec2[arithmetic.operations]{Arithmetic operations}
 
